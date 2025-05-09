@@ -4,6 +4,8 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.security.PrivateKey;
+
 @Getter
 @Setter
 @Entity
@@ -24,4 +26,7 @@ public class Monitor
     private String email;
     @Column(name = "TX_CONTEUDO")
     private String conteudo;
+    @ManyToOne
+    @JoinColumn(name= "ID_DISCIPLINA")
+    private Disciplina disciplina;
 }
